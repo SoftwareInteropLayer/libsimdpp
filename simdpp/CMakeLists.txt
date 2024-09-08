@@ -6,11 +6,6 @@
 
 file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.h *.inl *.hpp)
 
-foreach(FILE ${HEADERS})
-    get_filename_component(FILE_PATH "${FILE}" PATH)
-    install(FILES "${FILE}" DESTINATION "${SIMDPP_INCLUDEDIR}/simdpp/${FILE_PATH}")
-endforeach()
-
 # Don't enable header tests by default because configuring it takes excessive
 # amount of time
 set(ENABLE_HEADER_TESTS "0")
